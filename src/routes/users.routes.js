@@ -10,8 +10,6 @@ function myMiddleware(request, response, next) {
   
 }
 
-
-
 const usersController = new UsersController()
 
 usersRoutes.post("/", myMiddleware, usersController.create)
