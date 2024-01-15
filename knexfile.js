@@ -1,4 +1,5 @@
 const path = require("path")
+const { Database } = require("sqlite")
 
 module.exports = {
   development: {
@@ -6,6 +7,15 @@ module.exports = {
     connection: {
       filename: path.resolve(__dirname, "src", "database", "database.db"),
     },
-    useNullAsDefault: true
+    migrations: {
+      directory: path.resolve(
+        __dirname,
+        "src",
+        "database",
+        "knex",
+        "migrations"
+      ),
+    },
+    useNullAsDefault: true,
   },
 }
